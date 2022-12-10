@@ -2,6 +2,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
+  background-color: grey;
 }
 
 textarea {
@@ -21,9 +22,9 @@ textarea {
   border-bottom: 10px solid black;
 }
 
-.description {
+/* .description {
   white-space: pre-wrap;
-}
+} */
 
 .time-block {
   text-align: center;
@@ -65,7 +66,8 @@ textarea {
   color: white;
 }
 
-.saveBtn i:hover {
-  font-size: 20px;
+.saveBtn:hover {
+  /* font-size: 20px; */
+  color: black;
   transition: all 0.3s ease-in-out;
 }
