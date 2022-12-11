@@ -23,7 +23,7 @@ function savesSchedule(arr) {
 
 function generateHTMLTimeblocks() {
     var startOfBusiness = moment("09", "hh").format("h a");
-    startOfBusiness = 5;
+    startOfBusiness = 9;
     var endOfBusiness = moment("17", "hh").format("h a");
     endOfBusiness = 17;
 
