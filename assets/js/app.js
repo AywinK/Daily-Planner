@@ -89,7 +89,7 @@ function generateHTMLTimeblocks() {
 };
 
 function givesFeedback(userInput) {
-    if (userInput) {
+    if (userInput.trim()) {
         $("#feedback").text(`Added to local storage - ${userInput}`).fadeIn(1000).fadeOut(4000);
     } else {
         $("#feedback").text("Timeblock cleared").fadeIn(1000).fadeOut(4000);
@@ -102,7 +102,7 @@ function loadsSchedule() {
     var textareaEl = $(".time-block textarea")
     textareaEl.each(function (index) {
         if (schedule[index]) {
-            $(this).val(`${schedule[index]}`)
+            $(this).val(`${schedule[index].trim()}`)
         }
     })
 };
