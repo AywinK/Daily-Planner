@@ -72,13 +72,13 @@ timeblockArr.each(function (index) {
 
     switch (true) {
         case (isPast):
-            $(this).children("textarea").addClass("past");
+            $(this).children("textarea").addClass("past").removeClass("present future");
         break
         case (isFuture):
-            $(this).children("textarea").addClass("future");
+            $(this).children("textarea").addClass("future").removeClass("present past");
         break
         default:
-            $(this).children("textarea").addClass("present");
+            $(this).children("textarea").addClass("present").removeClass("past future");
     }
 
 })
