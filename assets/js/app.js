@@ -52,7 +52,7 @@ timeblockArr.each(function (index) {
 })
 
 timeblockArr.children("p").addClass("hour pt-3 pr-2 pl-5 m-0");
-timeblockArr.children("textarea").addClass("flex-grow-1 m-0");
+timeblockArr.children("textarea").addClass("flex-grow-1 m-0 description");
 timeblockArr.children("button").addClass("saveBtn")
 timeblockArr.children("button").children("i").addClass("fa-solid fa-floppy-disk pr-4")
 
@@ -60,3 +60,25 @@ timeblockArr.each(function (index) {
     $(this).children(".saveBtn").data("ScheduleIndex", index);
     console.log($(this).children(".saveBtn").data("ScheduleIndex"));
 });
+
+var currentHour = moment().format("HH");
+console.log(currentHour);
+
+timeblockArr.each(function (index) {
+    // var isPresent = (timeblockArr[index] === currentHour);
+    var isPast = (moment(timeblockHourArr[index],"hha").isBefore());
+    var isFuture = (moment(timeblockHourArr[index],"hha").isAfter());
+    console.log([isPast, isFuture, timeblockArr[index]]);
+
+    switch (true) {
+        case (isPast):
+            $(this).children("textarea").addClass("past");
+        break
+        case (isFuture):
+            $(this).children("textarea").addClass("future");
+        break
+        default:
+            $(this).children("textarea").addClass("present");
+    }
+
+})
