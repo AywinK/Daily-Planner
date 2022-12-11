@@ -22,9 +22,11 @@ textarea {
   border-bottom: 10px solid black;
 }
 
-/* .description {
+.description {
   white-space: pre-wrap;
-} */
+  /* cursor: text; */
+  /* z-index: 1000000 !important; */
+}
 
 .time-block {
   text-align: center;
