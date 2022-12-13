@@ -1,7 +1,7 @@
 
-console.log("initial test");
 
-// display current day at top of the calender when user opens planner
+// ------------------------------ FUNCTION - on initial page load ------------------------------
+// display current day at top of the calender when user opens planner and runs functions to generate timeblocks and display information from local storage
 (function () { // immediately invoked function expression
     console.log("tests current day function IIFE")
     $("#feedback").hide();
@@ -13,14 +13,18 @@ console.log("initial test");
     loadsSchedule();
 }());
 
+// ------------------------------ GLOBAL FUNCTIONS ------------------------------
+// obtains schedule from local storage
 function getSchedule() {
     return JSON.parse(localStorage.getItem("schedule")) || [];
 };
 
+// saves schedule to local storage
 function savesSchedule(arr) {
     localStorage.setItem("schedule", JSON.stringify(arr));
 }
 
+// dynamically creates timeblocks in hourly increments which are styled based on current time within the container
 function generateHTMLTimeblocks() {
     var startOfBusiness = moment("09", "hh").format("h a");
     startOfBusiness = 9;
@@ -88,6 +92,7 @@ function generateHTMLTimeblocks() {
 
 };
 
+// provides user with feedback when save button is pressed
 function givesFeedback(userInput) {
     if (userInput.trim()) {
         $("#feedback").text(`Added to local storage - ${userInput}`).fadeIn(1000).fadeOut(4000);
@@ -96,6 +101,7 @@ function givesFeedback(userInput) {
     }
 };
 
+// adds schedule timeblock events from local storage to the dynamically generated HTML timeblock elements
 function loadsSchedule() {
     var schedule = getSchedule();
     console.log(schedule);
@@ -107,6 +113,8 @@ function loadsSchedule() {
     })
 };
 
+// ------------------------------ ALL EVENT LISTENERS ------------------------------
+// event listener for each save button press - updates the respective timeblock when save button on the app is pressed
 $("button").click(function () {
     var schedule = getSchedule();
     // console.log(schedule);
