@@ -1,5 +1,4 @@
 # Daily-Planner
-# JS-Fundamentals-Coding-Quiz
 
 ## Description
 A web application that allows a user to save important events to manage their work schedule. The planner provides the user with hourly timeblocks for standard business hours to enter events. The timeblocks are dynamically colour coded based on the current time. The events are stored locally and persists between page refreshes. The timeblocks can be easily modified and saved with a button press. Created using HTML, CSS, and JavaScript (including the DOM API). <br>
